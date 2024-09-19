@@ -1,7 +1,6 @@
 import 'package:ecommerce_concept/features/product/ui/widgets/fade_in_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_concept/features/product/domain/entities/product_entity.dart';
-import 'package:ecommerce_concept/features/product/ui/pages/product_detail_page.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
