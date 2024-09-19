@@ -153,6 +153,7 @@ class _ProductImageSection extends StatelessWidget {
             controller: tabController,
             isScrollable: true,
             indicatorColor: AppPalette.white,
+            tabAlignment: TabAlignment.center,
             tabs: product.productDetail.images.map((image) {
               return Tab(
                 child: CachedNetworkImage(
