@@ -28,6 +28,13 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
         const Duration(milliseconds: 100),
       ),
     );
+
+    on<ProductRefreshed>(
+      (event, emit) {
+        emit(const ProductState());
+        add(ProductFetched());
+      },
+    );
   }
 
   final ProductRepository _productRepository;

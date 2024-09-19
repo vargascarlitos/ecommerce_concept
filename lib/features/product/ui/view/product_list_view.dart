@@ -12,7 +12,15 @@ class ProductListView extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppPalette.black01,
       appBar: AppBar(
-        title: const Text('Products List'),
+        title: const Text(
+          'Products List',
+          style: TextStyle(
+            color: AppPalette.white,
+            fontSize: 28.0,
+            fontWeight: FontWeight.w300,
+          ),
+        ),
+        forceMaterialTransparency: true,
       ),
       body: const _ProductList(),
     );
@@ -46,23 +54,29 @@ class _ProductListState extends State<_ProductList> {
             if (state.products.isEmpty) {
               return const Center(child: Text('No products'));
             }
-            return ListView.builder(
-              itemBuilder: (BuildContext context, int index) {
-                return index >= state.products.length
-                    ? const Center(child: CircularProgressIndicator())
-                    : ProductItemWidget(
-                        thumbnail: state.products[index].thumbnail,
-                        title: state.products[index].title,
-                        description: state.products[index].description,
-                        price: state.products[index].price,
-                        availableStatus: state.products[index].availabilityStatus,
-                        rating: state.products[index].rating,
-                      );
+            return RefreshIndicator(
+              onRefresh: () async {
+                context.read<ProductBloc>().add(ProductRefreshed());
               },
-              itemCount: state.hasReachedMax
-                  ? state.products.length
-                  : state.products.length + 1,
-              controller: _scrollController,
+              child: ListView.builder(
+                itemBuilder: (BuildContext context, int index) {
+                  return index >= state.products.length
+                      ? const Center(child: CircularProgressIndicator())
+                      : ProductItemWidget(
+                          thumbnail: state.products[index].thumbnail,
+                          title: state.products[index].title,
+                          description: state.products[index].description,
+                          price: state.products[index].price,
+                          availableStatus:
+                              state.products[index].availabilityStatus,
+                          rating: state.products[index].rating,
+                        );
+                },
+                itemCount: state.hasReachedMax
+                    ? state.products.length
+                    : state.products.length + 1,
+                controller: _scrollController,
+              ),
             );
           default:
             return const Center(
@@ -92,4 +106,3 @@ class _ProductListState extends State<_ProductList> {
     return currentScroll >= (maxScroll * 0.9);
   }
 }
-

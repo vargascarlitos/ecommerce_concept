@@ -8,3 +8,8 @@ final class ProductFetched extends ProductEvent {
   @override
   List<Object> get props => [];
 }
+
+final class ProductRefreshed extends ProductEvent {
+  @override
+  List<Object> get props => [];
+}
