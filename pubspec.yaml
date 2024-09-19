@@ -28,6 +28,8 @@ dependencies:
   talker_bloc_logger: ^4.4.1
   flutter_secure_storage: ^4.2.1
   shared_preferences: ^2.3.2
+  stream_transform: ^2.1.0
+  bloc_concurrency: ^0.2.5
 
 dev_dependencies:
   flutter_test:
