@@ -1,7 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce_concept/app_config/style/app_palette.dart';
 import 'package:ecommerce_concept/features/product/ui/pages/product_list_page.dart';
-import 'package:ecommerce_concept/app_config/injector/injector.dart' as injector;
+import 'package:ecommerce_concept/app_config/injector/injector.dart'
+    as injector;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -21,8 +22,10 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         textTheme: GoogleFonts.archivoTextTheme(),
-        colorScheme: ColorScheme.fromSeed(seedColor: AppPalette.black01),
-        useMaterial3: false,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: AppPalette.black01,
+        ),
+        useMaterial3: true,
       ),
       home: const ProductListPage(),
     );

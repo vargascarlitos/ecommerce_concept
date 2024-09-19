@@ -20,7 +20,7 @@ class ProductListView extends StatelessWidget {
             fontWeight: FontWeight.w300,
           ),
         ),
-        forceMaterialTransparency: true,
+        backgroundColor: AppPalette.black01,
       ),
       body: const _ProductList(),
     );
