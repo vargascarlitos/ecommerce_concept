@@ -1,4 +1,5 @@
 import 'package:ecommerce_concept/app_config/style/app_palette.dart';
+import 'package:ecommerce_concept/features/product/domain/entities/product_entity.dart';
 import 'package:ecommerce_concept/features/product/ui/bloc/product_bloc.dart';
 import 'package:ecommerce_concept/features/product/ui/widgets/product_grid_item_widget.dart';
 import 'package:flutter/material.dart';
@@ -9,22 +10,34 @@ class ProductListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: AppPalette.black01,
-      appBar: AppBar(
-        title: const Text(
-          'Products List',
-          style: TextStyle(
-            color: AppPalette.white,
-            fontSize: 28.0,
-            fontWeight: FontWeight.w300,
-          ),
-        ),
-        backgroundColor: AppPalette.black01,
-      ),
-      body: const _ProductList(),
+      appBar: _ProductAppBar(),
+      body: _ProductList(),
     );
   }
+}
+
+class _ProductAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const _ProductAppBar();
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      title: const Text(
+        'Products List',
+        style: TextStyle(
+          color: AppPalette.white,
+          fontSize: 28.0,
+          fontWeight: FontWeight.w300,
+        ),
+      ),
+      backgroundColor: AppPalette.black01,
+    );
+  }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
 
 class _ProductList extends StatefulWidget {
