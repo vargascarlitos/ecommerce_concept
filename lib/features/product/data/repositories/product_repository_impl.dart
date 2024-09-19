@@ -26,39 +26,37 @@ class ProductRepositoryImpl implements ProductRepository {
 
     final products = result.asValue!.value.products;
 
-    List<ProductEntity> productsListEntity = products!
-        .map(
-          (product) => ProductEntity(
-            id: product.id!,
-            title: product.title!,
-            description: product.description!,
-            price: product.price!,
-            thumbnail: product.thumbnail!,
-            availabilityStatus: product.availabilityStatus!,
-            rating: product.rating!,
-            productDetail: ProductDetailEntity(
-              discountPercentage: product.discountPercentage!,
-              stock: product.stock!,
-              brand: product.brand ?? "",
-              category: product.category!,
-              images: product.images!.map((image) => image).toList(),
-              reviews: product.reviews!
-                  .map((review) => ReviewEntity(
-                        date: review.date!,
-                        reviewerEmail: review.reviewerEmail!,
-                        rating: review.rating!,
-                        comment: review.comment!,
-                        reviewerName: review.reviewerName!,
-                      ))
-                  .toList(),
-            ),
-          ),
-        )
-        .toList();
+    List<ProductEntity> productsListEntity = products!.map((product) {
+      product.images!.replaceRange(0, 1, [product.thumbnail!]);
+      return ProductEntity(
+        id: product.id!,
+        title: product.title!,
+        description: product.description!,
+        price: product.price!,
+        thumbnail: product.thumbnail!,
+        availabilityStatus: product.availabilityStatus!,
+        rating: product.rating!,
+        productDetail: ProductDetailEntity(
+          discountPercentage: product.discountPercentage!,
+          stock: product.stock!,
+          brand: product.brand ?? "",
+          category: product.category!,
+          images: [...product.images!],
+          reviews: product.reviews!
+              .map((review) => ReviewEntity(
+                    date: review.date!,
+                    reviewerEmail: review.reviewerEmail!,
+                    rating: review.rating!,
+                    comment: review.comment!,
+                    reviewerName: review.reviewerName!,
+                  ))
+              .toList(),
+        ),
+      );
+    }).toList();
 
     return Result.value(productsListEntity);
   }
-
 
 // final ProductLocalDataSource localDataSource;
 // final NetworkInfo networkInfo;
