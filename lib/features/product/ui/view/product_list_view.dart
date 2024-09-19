@@ -63,13 +63,7 @@ class _ProductListState extends State<_ProductList> {
                   return index >= state.products.length
                       ? const Center(child: CircularProgressIndicator())
                       : ProductItemWidget(
-                          thumbnail: state.products[index].thumbnail,
-                          title: state.products[index].title,
-                          description: state.products[index].description,
-                          price: state.products[index].price,
-                          availableStatus:
-                              state.products[index].availabilityStatus,
-                          rating: state.products[index].rating,
+                          product: state.products[index],
                         );
                 },
                 itemCount: state.hasReachedMax
