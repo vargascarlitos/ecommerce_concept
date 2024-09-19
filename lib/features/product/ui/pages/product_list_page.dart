@@ -8,6 +8,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class ProductListPage extends StatelessWidget {
   const ProductListPage({super.key});
 
+  static const routeName = '/';
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(

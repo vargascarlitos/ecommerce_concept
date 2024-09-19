@@ -22,8 +22,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       routes: {
-        '/': (context) => const ProductListPage(),
-        '/product_detail': (context) => ProductDetailPage(
+        ProductListPage.routeName: (context) => const ProductListPage(),
+        ProductDetailPage.routeName: (context) => ProductDetailPage(
               product:
                   ModalRoute.of(context)!.settings.arguments as ProductEntity,
             ),

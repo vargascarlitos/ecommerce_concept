@@ -1,3 +1,4 @@
+import 'package:ecommerce_concept/features/product/ui/pages/product_detail_page.dart';
 import 'package:ecommerce_concept/features/product/ui/widgets/fade_in_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_concept/features/product/domain/entities/product_entity.dart';
@@ -14,7 +15,7 @@ class ProductItemWidget extends StatelessWidget {
     return InkWell(
       onTap: () {
         Navigator.of(context).pushNamed(
-          '/product_detail',
+          ProductDetailPage.routeName,
           arguments: product,
         );
       },
