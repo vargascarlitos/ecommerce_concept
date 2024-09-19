@@ -16,7 +16,7 @@ EventTransformer<E> throttleDroppable<E>(Duration duration) {
 }
 
 const int _limit = 10;
-const int _initialSkip = 1;
+const int _initialSkip = 0;
 
 class ProductBloc extends Bloc<ProductEvent, ProductState> {
   ProductBloc({required ProductRepository productRepository})
@@ -37,7 +37,7 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
     if (state.hasReachedMax) return;
 
     final result = await _productRepository.getProducts(
-      skip: _initialSkip,
+      skip: state.skip < 1 ? _initialSkip : state.skip,
       limit: _limit,
     );
 
@@ -62,6 +62,7 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
           status: ProductStatus.success,
           products: [...state.products, ...products],
           hasReachedMax: false,
+          skip: products.last.id,
         ),
       );
     }

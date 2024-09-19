@@ -35,10 +35,11 @@ class ProductRepositoryImpl implements ProductRepository {
             price: product.price!,
             thumbnail: product.thumbnail!,
             availabilityStatus: product.availabilityStatus!,
+            rating: product.rating!,
             productDetail: ProductDetailEntity(
               discountPercentage: product.discountPercentage!,
               stock: product.stock!,
-              brand: product.brand!,
+              brand: product.brand ?? "",
               category: product.category!,
               images: product.images!.map((image) => image).toList(),
               reviews: product.reviews!
