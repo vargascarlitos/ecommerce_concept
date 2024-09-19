@@ -36,9 +36,9 @@ class MyApp extends StatelessWidget {
                 width: ResponsiveValue<double?>(
                   context,
                   conditionalValues: [
-                    Condition.equals(name: MOBILE, value: 450),
-                    Condition.between(start: 800, end: 1100, value: 800),
-                    Condition.between(start: 1000, end: 1200, value: 700),
+                    const Condition.equals(name: MOBILE, value: 450),
+                    const Condition.between(start: 800, end: 1100, value: 800),
+                    const Condition.between(start: 1000, end: 1200, value: 700),
                   ],
                 ).value,
                 child: child!,
