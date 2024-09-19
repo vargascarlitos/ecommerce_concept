@@ -1,5 +1,4 @@
 import 'package:ecommerce_concept/app_config/style/app_palette.dart';
-import 'package:ecommerce_concept/features/product/domain/entities/product_entity.dart';
 import 'package:ecommerce_concept/features/product/ui/bloc/product_bloc.dart';
 import 'package:ecommerce_concept/features/product/ui/widgets/product_grid_item_widget.dart';
 import 'package:flutter/material.dart';

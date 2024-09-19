@@ -14,10 +14,9 @@ class ProductItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) => ProductDetailPage(product: product),
-          ),
+        Navigator.of(context).pushNamed(
+          '/product_detail',
+          arguments: product,
         );
       },
       child: FadeInWidget(
@@ -121,7 +120,7 @@ class ProductItemWidget extends StatelessWidget {
             ),
             Positioned(
               top: 20,
-              right: 20,
+              right: 15,
               child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 decoration: BoxDecoration(
