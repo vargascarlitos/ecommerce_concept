@@ -21,4 +21,5 @@ class ProductListResponseModel {
       _$ProductListResponseModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$ProductListResponseModelToJson(this);
+
 }

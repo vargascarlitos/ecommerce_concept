@@ -2,17 +2,17 @@ import 'package:async/async.dart';
 import 'package:ecommerce_concept/app_config/http_client/api_client.dart';
 import 'package:ecommerce_concept/features/product/data/models/product_list_response_model.dart';
 
-abstract interface class ProductDatasource {
+abstract interface class ProductRemoteDataSource {
   Future<Result<ProductListResponseModel>> fetchProducts({
     required int limit,
     required int skip,
   });
 }
 
-class ProductDatasourceImpl implements ProductDatasource {
+class ProductRemoteDatasourceImpl implements ProductRemoteDataSource {
   final APIClient apiClient;
 
-  ProductDatasourceImpl({
+  ProductRemoteDatasourceImpl({
     required this.apiClient,
   });
 
