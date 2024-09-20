@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:ecommerce_concept/app_config/http_client/api_client.dart';
 import 'package:ecommerce_concept/app_config/http_client/api_client_impl.dart';
 import 'package:ecommerce_concept/app_config/utils/test_helper.dart';
 import 'package:ecommerce_concept/features/product/data/models/product_list_response_model.dart';
@@ -13,7 +14,7 @@ import 'api_client_test.mocks.dart';
 
 void main() {
   late MockDio mockDio;
-  late ApiClientImpl apiClient;
+  late APIClient apiClient;
 
   setUp(() {
     mockDio = MockDio();
