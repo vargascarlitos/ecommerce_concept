@@ -1,14 +1,11 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:ecommerce_concept/app_config/utils/test_helper.dart';
-import 'package:ecommerce_concept/features/product/domain/entities/product_detail_entity.dart';
-import 'package:ecommerce_concept/features/product/domain/entities/review_entity.dart';
 import 'package:ecommerce_concept/features/product/ui/bloc/product_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:async/async.dart';
 
-import 'package:ecommerce_concept/features/product/domain/entities/product_entity.dart';
 import 'package:ecommerce_concept/features/product/domain/repositories/product_repository.dart';
 import 'package:ecommerce_concept/app_config/error/failure.dart';
 

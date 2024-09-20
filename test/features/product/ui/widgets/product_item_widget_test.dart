@@ -1,6 +1,4 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce_concept/app_config/utils/test_helper.dart';
-import 'package:ecommerce_concept/features/product/domain/entities/product_entity.dart';
 import 'package:ecommerce_concept/features/product/ui/pages/product_detail_page.dart';
 import 'package:ecommerce_concept/features/product/ui/widgets/product_grid_item_widget.dart';
 import 'package:flutter/material.dart';
