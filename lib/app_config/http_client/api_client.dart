@@ -10,6 +10,4 @@ abstract interface class APIClient {
     Map<String, dynamic>? headers,
     bool isIsolate = true,
   });
-
-
 }
