@@ -7,13 +7,13 @@ class ProductState extends Equatable {
   final List<ProductEntity> products;
   final bool hasReachedMax;
   final int skip;
-  final String errorMessage;
+  final ServerFailure? failure;
 
   const ProductState({
     this.status = ProductStatus.initial,
     this.products = const <ProductEntity>[],
     this.hasReachedMax = false,
-    this.errorMessage = '',
+    this.failure,
     this.skip = 1,
   });
 
@@ -21,14 +21,14 @@ class ProductState extends Equatable {
     ProductStatus? status,
     List<ProductEntity>? products,
     bool? hasReachedMax,
-    String? errorMessage,
+    ServerFailure? failure,
     int? skip,
   }) {
     return ProductState(
       status: status ?? this.status,
       products: products ?? this.products,
       hasReachedMax: hasReachedMax ?? this.hasReachedMax,
-      errorMessage: errorMessage ?? this.errorMessage,
+      failure: failure ?? this.failure,
       skip: skip ?? this.skip,
     );
   }
@@ -38,7 +38,7 @@ class ProductState extends Equatable {
         status,
         products,
         hasReachedMax,
-        errorMessage,
+        failure,
         skip,
       ];
 }

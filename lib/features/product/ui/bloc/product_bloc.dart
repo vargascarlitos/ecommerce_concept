@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:bloc_concurrency/bloc_concurrency.dart';
+import 'package:ecommerce_concept/app_config/error/failure.dart';
 import 'package:ecommerce_concept/features/product/domain/entities/product_entity.dart';
 import 'package:ecommerce_concept/features/product/domain/repositories/product_repository.dart';
 import 'package:equatable/equatable.dart';
@@ -52,7 +53,7 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
       emit(
         state.copyWith(
           status: ProductStatus.failure,
-          errorMessage: result.asError!.error.toString(),
+          failure: result.asError!.error as ServerFailure,
         ),
       );
     } else if (result.asValue!.value.isEmpty) {

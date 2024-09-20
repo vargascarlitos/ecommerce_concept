@@ -1,5 +1,6 @@
 import 'package:ecommerce_concept/app_config/style/app_palette.dart';
 import 'package:ecommerce_concept/features/product/ui/bloc/product_bloc.dart';
+import 'package:ecommerce_concept/features/product/ui/widgets/empty_widget.dart';
 import 'package:ecommerce_concept/features/product/ui/widgets/product_grid_item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -61,7 +62,13 @@ class _ProductListState extends State<_ProductList> {
       builder: (context, state) {
         switch (state.status) {
           case ProductStatus.failure:
-            return const Center(child: Text('Failed to fetch products'));
+            return  Center(
+              child: EmptyWidget(
+                onPressed: () {
+                  context.read<ProductBloc>().add(ProductRefreshed());
+                },
+              ),
+            );
           case ProductStatus.success:
             if (state.products.isEmpty) {
               return const Center(child: Text('No products'));

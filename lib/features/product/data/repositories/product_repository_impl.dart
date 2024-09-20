@@ -1,4 +1,5 @@
 import 'package:async/src/result/result.dart';
+import 'package:ecommerce_concept/app_config/error/failure.dart';
 import 'package:ecommerce_concept/features/product/data/datasource/product_remote_datasource.dart';
 import 'package:ecommerce_concept/features/product/domain/entities/product_detail_entity.dart';
 import 'package:ecommerce_concept/features/product/domain/entities/product_entity.dart';
@@ -21,7 +22,11 @@ class ProductRepositoryImpl implements ProductRepository {
     );
 
     if (result.isError) {
-      return Result.error(result.asError!.error);
+      return Result.error(
+        ServerFailure(
+          result.asError!.error.toString(),
+        ),
+      );
     }
 
     final products = result.asValue!.value.products;
@@ -57,33 +62,4 @@ class ProductRepositoryImpl implements ProductRepository {
 
     return Result.value(productsListEntity);
   }
-
-// final ProductLocalDataSource localDataSource;
-// final NetworkInfo networkInfo;
-//
-// ProductRepositoryImpl({
-//   required this.remoteDataSource,
-//   required this.localDataSource,
-//   required this.networkInfo,
-// });
-
-// @override
-// Future<Either<Failure, List<Product>>> getProducts() async {
-//   if (await networkInfo.isConnected) {
-//     try {
-//       final remoteProducts = await remoteDataSource.getProducts();
-//       localDataSource.cacheProducts(remoteProducts);
-//       return Right(remoteProducts);
-//     } on ServerException {
-//       return Left(ServerFailure());
-//     }
-//   } else {
-//     try {
-//       final localProducts = await localDataSource.getLastProducts();
-//       return Right(localProducts);
-//     } on CacheException {
-//       return Left(CacheFailure());
-//     }
-//   }
-// }
 }

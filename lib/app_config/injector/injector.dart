@@ -38,7 +38,7 @@ Future<void> init() async {
   sl.registerLazySingleton(
     () => Dio(
       BaseOptions(
-        baseUrl: 'https://dummyjson.com/',
+        baseUrl: 'https://dummyjson.com/asdasd',
         contentType: 'application/json',
         connectTimeout: const Duration(milliseconds: 4000),
         receiveTimeout: const Duration(milliseconds: 4000),

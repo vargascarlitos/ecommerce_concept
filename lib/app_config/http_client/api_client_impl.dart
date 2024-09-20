@@ -22,8 +22,29 @@ class ApiClientImpl implements APIClient {
         ),
       );
       return Result.value(converter(response.data));
-    } catch (e) {
-      return Result.error(e);
+    } on DioException catch (e) {
+      return _handleError(e);
+    }
+  }
+
+  Result<T> _handleError<T>(DioException e) {
+    switch (e.type) {
+      case DioExceptionType.badCertificate:
+        return Result.error('Bad certificate, please try again');
+      case DioExceptionType.receiveTimeout:
+        return Result.error('Receive timeout, please try again');
+      case DioExceptionType.badResponse:
+        return Result.error('Response error, please try again');
+      case DioExceptionType.sendTimeout:
+        return Result.error('Send timeout, please try again');
+      case DioExceptionType.cancel:
+        return Result.error('Request cancelled');
+      case DioExceptionType.unknown:
+        return Result.error('Internal server error, please try again');
+      case DioExceptionType.connectionTimeout:
+        return Result.error('Connection timeout, please try again');
+      case DioExceptionType.connectionError:
+        return Result.error('Connection error, please try again');
     }
   }
 }
