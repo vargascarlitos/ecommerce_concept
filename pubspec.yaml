@@ -28,6 +28,7 @@ dependencies:
   cached_network_image: ^3.4.1
   flutter_rating_bar: ^4.0.1
   mockito: ^5.4.4
+  bloc_test: ^9.1.7
 
 dev_dependencies:
   flutter_test:

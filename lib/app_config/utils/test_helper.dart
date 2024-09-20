@@ -1,27 +1,25 @@
+import 'package:ecommerce_concept/features/product/domain/entities/product_detail_entity.dart';
+import 'package:ecommerce_concept/features/product/domain/entities/product_entity.dart';
+import 'package:ecommerce_concept/features/product/domain/entities/review_entity.dart';
+
 abstract class TestHelper {
   static const Map<String, dynamic> productListResponseModel = {
     "products": [
       {
         "id": 1,
         "title": "Essence Mascara Lash Princess",
-        "description": "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.",
+        "description":
+            "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.",
         "category": "beauty",
         "price": 9.99,
         "discountPercentage": 7.17,
         "rating": 4.94,
         "stock": 5,
-        "tags": [
-          "beauty",
-          "mascara"
-        ],
+        "tags": ["beauty", "mascara"],
         "brand": "Essence",
         "sku": "RCH45Q1A",
         "weight": 2,
-        "dimensions": {
-          "width": 23.17,
-          "height": 14.43,
-          "depth": 28.01
-        },
+        "dimensions": {"width": 23.17, "height": 14.43, "depth": 28.01},
         "warrantyInformation": "1 month warranty",
         "shippingInformation": "Ships in 1 month",
         "availabilityStatus": "Low Stock",
@@ -59,29 +57,24 @@ abstract class TestHelper {
         "images": [
           "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png"
+        "thumbnail":
+            "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png"
       },
       {
         "id": 2,
         "title": "Eyeshadow Palette with Mirror",
-        "description": "The Eyeshadow Palette with Mirror offers a versatile range of eyeshadow shades for creating stunning eye looks. With a built-in mirror, it's convenient for on-the-go makeup application.",
+        "description":
+            "The Eyeshadow Palette with Mirror offers a versatile range of eyeshadow shades for creating stunning eye looks. With a built-in mirror, it's convenient for on-the-go makeup application.",
         "category": "beauty",
         "price": 19.99,
         "discountPercentage": 5.5,
         "rating": 3.28,
         "stock": 44,
-        "tags": [
-          "beauty",
-          "eyeshadow"
-        ],
+        "tags": ["beauty", "eyeshadow"],
         "brand": "Glamour Beauty",
         "sku": "MVCFH27F",
         "weight": 3,
-        "dimensions": {
-          "width": 12.42,
-          "height": 8.63,
-          "depth": 29.13
-        },
+        "dimensions": {"width": 12.42, "height": 8.63, "depth": 29.13},
         "warrantyInformation": "1 year warranty",
         "shippingInformation": "Ships in 2 weeks",
         "availabilityStatus": "In Stock",
@@ -119,11 +112,37 @@ abstract class TestHelper {
         "images": [
           "https://cdn.dummyjson.com/products/images/beauty/Eyeshadow%20Palette%20with%20Mirror/1.png"
         ],
-        "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Eyeshadow%20Palette%20with%20Mirror/thumbnail.png"
+        "thumbnail":
+            "https://cdn.dummyjson.com/products/images/beauty/Eyeshadow%20Palette%20with%20Mirror/thumbnail.png"
       }
     ],
     "total": 194,
     "skip": 0,
     "limit": 2
   };
+
+  static const ProductEntity productEntity = ProductEntity(
+    id: 1,
+    title: 'Essence Mascara Lash Princess',
+    description: 'Mascara',
+    price: 4.99,
+    availabilityStatus: 'In stock',
+    rating: 4.5,
+    thumbnail: 'https://via.placeholder.com/150',
+    productDetail: ProductDetailEntity(
+        brand: 'Essence',
+        category: 'Mascara',
+        discountPercentage: 0,
+        stock: 100,
+        images: [
+          'https://via.placeholder.com/150'
+        ],
+        reviews: [
+          ReviewEntity(
+              rating: 4,
+              reviewerName: 'John Doe',
+              comment: 'Good product',
+              reviewerEmail: ' [email protected]'),
+        ]),
+  );
 }

@@ -18,6 +18,24 @@ class ProductDetailEntity extends Equatable {
     required this.reviews,
   });
 
+  ProductDetailEntity copyWith({
+    double? discountPercentage,
+    int? stock,
+    String? brand,
+    String? category,
+    List<String>? images,
+    List<ReviewEntity>? reviews,
+  }) {
+    return ProductDetailEntity(
+      discountPercentage: discountPercentage ?? this.discountPercentage,
+      stock: stock ?? this.stock,
+      brand: brand ?? this.brand,
+      category: category ?? this.category,
+      images: images ?? this.images,
+      reviews: reviews ?? this.reviews,
+    );
+  }
+
   @override
   List<Object?> get props => [
     discountPercentage,

@@ -390,14 +390,14 @@ class _ProductReviewsSection extends StatelessWidget {
                     Text(review.reviewerName,
                         style: const TextStyle(color: AppPalette.white)),
                     Text(
-                      review.date.toLocal().weekday == DateTime.now().weekday
+                      review.date?.toLocal().weekday == DateTime.now().weekday
                           ? 'Today'
-                          : review.date.toLocal().weekday ==
+                          : review.date?.toLocal().weekday ==
                           DateTime.now()
                               .subtract(const Duration(days: 1))
                               .weekday
                           ? 'Yesterday'
-                          : review.date.toLocal().toString().substring(0, 10),
+                          : review.date?.toLocal().toString().substring(0, 10) ?? '',
                       style: const TextStyle(fontSize: 12, color: Colors.grey),
                     ),
                   ],

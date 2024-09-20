@@ -5,14 +5,14 @@ class ReviewEntity extends Equatable {
   final String comment;
   final String reviewerName;
   final String reviewerEmail;
-  final DateTime date;
+  final DateTime? date;
 
   const ReviewEntity({
     required this.rating,
     required this.comment,
     required this.reviewerName,
     required this.reviewerEmail,
-    required this.date,
+     this.date,
   });
 
   @override

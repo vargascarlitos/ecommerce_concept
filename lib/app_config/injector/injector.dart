@@ -66,3 +66,7 @@ Future<void> init() async {
     ),
   );
 }
+
+void reset() {
+  sl.reset();
+}

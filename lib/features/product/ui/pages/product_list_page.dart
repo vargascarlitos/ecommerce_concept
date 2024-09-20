@@ -24,12 +24,14 @@ class ProductListPage extends StatelessWidget {
               context: context,
               builder: (context) {
                 return AlertDialog(
+                  key: const Key('error_dialog'),
                   title: const Text('Error'),
                   content: Text(
                     state.failure?.message.toString() ?? "Error occurred",
                   ),
                   actions: [
                     TextButton(
+                      key: const Key('ok_button'),
                       onPressed: () {
                         Navigator.of(context).pop();
                       },
@@ -41,7 +43,7 @@ class ProductListPage extends StatelessWidget {
             );
           }
         },
-        child: const ProductListView(),
+        child: const ProductListView(key: Key('product_list_view')),
       ),
     );
   }
