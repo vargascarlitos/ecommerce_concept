@@ -1,6 +1,14 @@
 # E-commerce Concept
 
-![Simulator Screenshot - iPhone SE (3rd generation) - 2024-09-20 at 00 58 19](https://github.com/user-attachments/assets/58ba8c46-9bf5-4fb3-a5da-6bffd98556ca)
+<div style="display: flex; gap: 10px; align-items: center;">
+
+  <img src="https://github.com/user-attachments/assets/6ee31570-3ffd-4feb-b161-5b819d37e455" alt="Simulator Screenshot - iPhone SE (3rd generation) - 2024-09-20 at 00 57 59" width="200"/>
+
+  <img src="https://github.com/user-attachments/assets/58ba8c46-9bf5-4fb3-a5da-6bffd98556ca" alt="Simulator Screenshot - iPhone SE (3rd generation) - 2024-09-20 at 00 58 19" width="200"/>
+
+## Video
+https://github.com/user-attachments/assets/b5300fce-73a7-47e7-8d1b-2974ad4df2e9
+
 
 ## Descripción
 Este proyecto es una aplicación de e-commerce desarrollada en Flutter que permite a los usuarios explorar productos, ver detalles específicos, y realizar acciones como agregar productos al carrito. La aplicación sigue la arquitectura limpia (Clean Architecture) para mantener un código modular, fácil de mantener y escalable.
@@ -66,19 +74,6 @@ Se probaron los BLoCs para asegurar que manejen los eventos correctamente y actu
 - No se encontraron errores críticos durante las pruebas, y los casos de uso comunes fueron manejados adecuadamente.
 - Los componentes de la UI se renderizan como se espera y responden correctamente a las acciones del usuario.
 
-## Capturas de Pantalla y Vídeos
-
-### Pantallas Principales
-1. **Lista de Productos**  
-   ![Lista de Productos]
-
-2. **Detalle del Producto**  
-   ![Detalle del Producto]
-
-### Demostración en Video
-Puedes ver una demostración completa del funcionamiento de la aplicación en el siguiente enlace:
-[Video de la Aplicación]
-
 ## Cómo Ejecutar las Pruebas
 Para ejecutar todas las pruebas, sigue estos pasos:
 
@@ -90,3 +85,74 @@ Para ejecutar todas las pruebas, sigue estos pasos:
    flutter test
     ```
 Esto ejecutará todas las pruebas unitarias y de widgets dentro de la carpeta test.
+
+## Cómo Ejecutar la Aplicación
+```bash
+   flutter run --debug -t lib/main.dart
+```
+
+Esto ejecutará la apliación, no se olvide de tener un emulador abierto o el ceclular conectado.
+
+## Estructura del proyecto
+```plaintext
+lib/
+│
+├── app_config/
+│   ├── error/
+│   │   └── failure.dart
+│   │
+│   ├── http_client/
+│   │   ├── api_client.dart
+│   │   └── api_client_impl.dart
+│   │
+│   ├── injector/
+│   │   └── injector.dart
+│   │
+│   ├── style/
+│   │   └── app_palette.dart
+│   │
+│   └── utils/
+│       ├── test_helper.dart
+│       └── my_app.dart
+│
+├── features/
+│   └── product/
+│       ├── data/
+│       │   ├── datasource/
+│       │   ├── models/
+│       │   └── repositories/
+│       │
+│       ├── domain/
+│       │   ├── entities/
+│       │   └── repositories/
+│       │
+│       └── ui/
+│           ├── bloc/
+│           ├── pages/
+│           ├── view/
+│           └── widgets/
+│
+└── main.dart
+```
+Use una arquitectura limpia con 3 capaz, pero, sin casos de usos para ganar tiempo. La carpeta de ***Test*** presenta la misma estructura.
+
+## Reporte WakaTime
+Reporte de las horas trabajadas en el proyecto.
+<img width="800" alt="Screenshot 2024-09-20 at 1 01 18 AM" src="https://github.com/user-attachments/assets/667e4bf3-3bc2-4885-8c55-f4e71e908cfc">
+
+## Video de la evolución del trabajo
+#### Primer fetch de productos
+https://github.com/user-attachments/assets/82fd5ff0-12e4-4444-8734-6148d6f715e0
+### Comenzado la pantalla de detalle
+https://github.com/user-attachments/assets/bfde3fb7-e0d2-4de4-acdc-edf3cf311944
+### Diseño de inspiración
+![detalle](https://github.com/user-attachments/assets/b299c0f5-d87d-4e9a-a12c-34c9cc31d15c)
+
+
+
+
+
+
+
+
+
