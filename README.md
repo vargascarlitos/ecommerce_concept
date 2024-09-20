@@ -1,9 +1,12 @@
 # E-commerce Concept
 
+![Simulator Screenshot - iPhone SE (3rd generation) - 2024-09-20 at 00 58 19](https://github.com/user-attachments/assets/58ba8c46-9bf5-4fb3-a5da-6bffd98556ca)
+
 ## Descripción
 Este proyecto es una aplicación de e-commerce desarrollada en Flutter que permite a los usuarios explorar productos, ver detalles específicos, y realizar acciones como agregar productos al carrito. La aplicación sigue la arquitectura limpia (Clean Architecture) para mantener un código modular, fácil de mantener y escalable.
 
 ## Flutter y Dependencias
+
 
 ### Versión de Flutter
 - **SDK de Flutter:** `>=3.4.1 <4.0.0`
