@@ -20,7 +20,6 @@ class ProductListPage extends StatelessWidget {
         listenWhen: (previous, current) => previous.status != current.status,
         listener: (context, state) {
           if (state.status == ProductStatus.failure) {
-            print("Estoy aca mi rey");
             showDialog(
               context: context,
               builder: (context) {
