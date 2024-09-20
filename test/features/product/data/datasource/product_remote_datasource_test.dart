@@ -7,7 +7,6 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:async/async.dart';
 
-// Genera los mocks para el APIClient
 @GenerateMocks([APIClient])
 import 'product_remote_datasource_test.mocks.dart';
 

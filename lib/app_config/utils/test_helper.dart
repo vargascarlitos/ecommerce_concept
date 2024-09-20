@@ -1,5 +1,5 @@
 abstract class TestHelper {
-  static const productListResponseModel = {
+  static const Map<String, dynamic> productListResponseModel = {
     "products": [
       {
         "id": 1,
