@@ -9,7 +9,6 @@ import 'package:async/async.dart';
 import 'package:ecommerce_concept/features/product/domain/repositories/product_repository.dart';
 import 'package:ecommerce_concept/app_config/error/failure.dart';
 
-// Genera los mocks necesarios
 @GenerateMocks([ProductRepository])
 import 'product_bloc_test.mocks.dart';
 
@@ -54,14 +53,14 @@ void main() {
         when(mockProductRepository.getProducts(
                 skip: anyNamed('skip'), limit: anyNamed('limit')))
             .thenAnswer((_) async =>
-                Result.error(const ServerFailure('Failed to fetch products')));
+                Result.error(const ServerFailure('Failed')));
         return productBloc;
       },
       act: (bloc) => bloc.add(ProductFetched()),
       expect: () => [
         const ProductState(
           status: ProductStatus.failure,
-          failure: ServerFailure('Failed to fetch products'),
+          failure: ServerFailure('Failed'),
         ),
       ],
     );

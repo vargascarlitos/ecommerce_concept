@@ -13,7 +13,6 @@ import 'package:ecommerce_concept/features/product/ui/view/product_list_view.dar
 import 'package:ecommerce_concept/app_config/injector/injector.dart'
     as injector;
 
-// Crear un Mock del ProductBloc
 class MockProductBloc extends MockBloc<ProductEvent, ProductState>
     implements ProductBloc {}
 

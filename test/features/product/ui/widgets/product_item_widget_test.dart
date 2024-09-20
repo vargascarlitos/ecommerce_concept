@@ -29,7 +29,6 @@ void main() {
       const mockProduct = TestHelper.productEntity;
 
       // Inicia el widget bajo prueba
-      // Inicia el widget bajo prueba
       await tester.pumpWidget(
         MaterialApp(
           navigatorObservers: [mockNavigatorObserver],
@@ -44,7 +43,7 @@ void main() {
             }
             return null;
           },
-          home: Scaffold(
+          home: const Scaffold(
             body: ProductItemWidget(product: mockProduct),
           ),
         ),
